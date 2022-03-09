@@ -7,4 +7,4 @@ docker build -t buildsignal .
 docker stop buildsignal
 docker rm buildsignal
 
-docker image prune -a
+docker image prune -a -f
