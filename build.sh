@@ -21,6 +21,16 @@ cd /repos/signal/
 git clone https://github.com/signalapp/Signal-Desktop.git 
 cd Signal-Desktop/
 
+# Checkout latest tag that is not beta
+
+LATEST_TAG=$(git tag | sort -V | grep -v beta | tail -n 1)
+
+echo ----------------------------------------------------
+echo Building version $LATEST_TAG
+echo ----------------------------------------------------
+
+git checkout tags/$LATEST_TAG
+
 # Reinit nvm script 
 
 export NVM_DIR="$HOME/.nvm"
